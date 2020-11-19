@@ -9,9 +9,7 @@ class PetProfile extends React.Component {
     }
 
     componentDidMount() {
-        console.log('profile props', this.props)
-        /** TODO: Make this dynamic! Use the id param of the URL to fetch the correct cat!  */
-        fetch(`${API}/${this.props.match.params.id}`)
+        fetch(`${API}/3`)
             .then(res => res.json())
             .then(pet => this.setState({ pet }))
     }
@@ -19,7 +17,7 @@ class PetProfile extends React.Component {
     renderPet = () => {
         const { image, name, happiness, description, isAdopted } = this.state.pet;
         return (
-            
+
                 <div className="pet-page">
                     <img className="page-img" src={image ? image : 'https://static.toiimg.com/photo/msid-67586673/67586673.jpg?3918697'} alt={name}/>
                     <div className="page-info">
@@ -31,10 +29,10 @@ class PetProfile extends React.Component {
                     <div>
                         <div>⬅️</div>
                         <div>➡️</div>
-                        <button onClick={this.props.history.goBack}>Go Back</button>
+                        <button onClick={() => console.log("make this work!")}>Go Back</button>
                     </div>
                 </div>
-                
+
 
         )
     }

@@ -15,7 +15,6 @@ class PetIndex extends React.Component {
 
 
     render(){
-        // console.log('index props', this.props)
         return (
             <div className="index-page">
                 <h3>!! All of Our Pets !!</h3>
