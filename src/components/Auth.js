@@ -16,10 +16,9 @@ class Auth extends React.Component {
 
     handleSubmit = e => {
         const { isNewUser, password, confirmation, username } = this.state;
-        isNewUser 
+        isNewUser
             ? password === confirmation ? alert('created new account!') : alert('try again!')
-            : this.props.history.push("/pets")
-            /** TODO: when the user logs in, move them to our /pets page  */
+            : console.log("move me to the pets page!")
     }
 
     renderLogin = () => {
@@ -43,9 +42,8 @@ class Auth extends React.Component {
             </>
         )
     }
-    
+
     render(){
-        console.log('in auth', this.props)
         let { isNewUser } = this.state;
         return (
             <div className="simple-flex-col">
