@@ -20,23 +20,15 @@ React Router
 - supa dupa fast... you only have to fetch your HTML once
 
 
-### Challenges 
+### Challenges
 - if the initial fetch is slow... your users gonna be maaaad and/or not your user anymore
-- everything lives on a single app so you've gotta plan to have everything on that first view 
+- everything lives on a single app so you've gotta plan to have everything on that first view
 - no way to navigate to specific pages
-- no way share 
+- no way share
 - no way bookmark
 
 
 ## Dynamic Routing from Rails
-/users/:id
-
-Netflix example
-/movies/:id ===> /movies/8
-/movies/:genre ===> /movies/horror
-
-
-
 
 
 ### Component Notation vs Render Notation
@@ -44,10 +36,6 @@ Component Notation just takes a component name and automatically adds the router
 
 Render Notation takes a callback that returns a component, written as JSX. We do this so we can pass our own props.
 if you need routerProps, need to explicitly pass to your component
-
-
-## Parking Lot
-
 
 ### Using React Router
 `npm install react-router-dom --save`
@@ -94,7 +82,3 @@ Combine that with `if/else` logic and tracking history and you get `react-router
 - [React Router Github](https://github.com/ReactTraining/react-router)
 - [React Router Website](https://reacttraining.com/react-router/)
 - [Anchors in React Router](https://medium.com/javascript-in-plain-english/creating-a-hash-anchor-link-effect-with-react-router-a63dcb1a9b0e)
-
-
-
-

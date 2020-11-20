@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom'
 
 class Help extends React.Component {
   state = {
@@ -12,9 +13,11 @@ class Help extends React.Component {
 
   handleSubmit = e => {
     alert("Thanks for your question! We'll get back to you ASAP!")
+    this.props.history.push("/pets")
   }
 
   render(){
+    console.log(this.props)
     let { subject, content, email } = this.state;
     return (
       <div className="simple-flex-col">

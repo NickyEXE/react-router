@@ -8,7 +8,7 @@ class PetProfile extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`${API}/3`)
+    fetch(`${API}/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(pet => this.setState({ pet }))
   }
@@ -28,7 +28,7 @@ class PetProfile extends React.Component {
           <div>
             <div>⬅️</div>
             <div>➡️</div>
-            <button onClick={() => console.log("make this work!")}>Go Back</button>
+            <button onClick={this.props.history.goBack}>Go Back</button>
           </div>
         </div>
 
