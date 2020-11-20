@@ -5,3 +5,4 @@ export { default as Nav } from './Nav';
 export { default as PetCard } from './PetCard';
 export { default as PetIndex } from './PetIndex';
 export { default as PetProfile } from './PetProfile';
+export { default as PetFormModal } from './PetFormModal';

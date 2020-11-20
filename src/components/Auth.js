@@ -40,7 +40,7 @@ class Auth extends React.Component {
         <input name="name" placeholder="Name" value={name} onChange={this.handleChange}/>
         <input name="username" placeholder="Username" value={username} onChange={this.handleChange}/>
         <input name="password" placeholder="Password" type="password" value={password} onChange={this.handleChange}/>
-        <input name="confirmation" placeholder="Confirm Password"  type="password" value={confirmation} onChange={this.handleChange}/>
+        <input name="confirmation" placeholder="Confirm Password" type="password" value={confirmation} onChange={this.handleChange}/>
       </>
     )
   }

@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom'
 
 const PetCard = props => {
-  const { id, name, image, isAdopted } = props;
+  const { id, name, image, isAdopted, description, happiness } = props.pet;
   const history = useHistory()
 
   return (
@@ -10,9 +10,12 @@ const PetCard = props => {
       <img className="card-img" src={image ? image : 'https://static.toiimg.com/photo/msid-67586673/67586673.jpg?3918697'} alt={name}/>
       <div className="card-info">
         <h5>{name}</h5>
-        <div>{isAdopted ? 'No Longer up for Adoption' : 'Up for Adoption!'}</div>
+        <p>Happiness: {happiness}</p>
+        <p>{ description }</p>
+        <p>{isAdopted ? 'No Longer up for Adoption' : 'Up for Adoption!'}</p>
       </div>
       <button onClick={() => history.push(`pets/${id}`)}>Visit {name}!</button>
+      <button onClick={() => props.populateForm(props.pet)}>Edit {name}!</button>
     </div>
   )
 }
