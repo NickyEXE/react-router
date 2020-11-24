@@ -1,5 +1,4 @@
 import React from 'react';
-import PetProfile from './PetProfile';
 import PetCard from './PetCard';
 import { PetFormModal } from '.'
 
@@ -25,6 +24,18 @@ class PetIndex extends React.Component {
 
   toggleModal = () => this.setState({modal: !this.state.modal})
 
+  openNewPetForm = () => this.setState({
+    modal: true,
+    form: {
+      name: "",
+      happiness: 0,
+      description: "",
+      image: "",
+      isAdopted: false,
+      id: null
+    }
+  })
+
   onChange = (event) => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -44,27 +55,41 @@ class PetIndex extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    fetch(`http://localhost:7001/cats/${this.state.form.id}`, {
-      method: 'PATCH', // or 'PUT'
+    const options = {
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(this.state.form),
+    }
+    if (this.state.form.id){
+      fetch(`http://localhost:7001/cats/${this.state.form.id}`, {...options, method: "PATCH"})
+      .then(response => response.json())
+      .then(this.overwritePet)
+    } else {
+      fetch(`http://localhost:7001/cats/`, {...options, method: "POST"})
+      .then(response => response.json())
+      .then(pet => this.setState({pets: [...this.state.pets, pet], modal: false}))
+    }
+  }
+
+  deletePet = (id) => {
+    fetch(`http://localhost:7001/cats/${id}`, {method: "DELETE"})
+    .then(res => res.json())
+    .then(() => {
+      const newPets = this.state.pets.filter(pet => pet.id !== id)
+      this.setState({pets: newPets})
     })
-    .then(response => response.json())
-    .then(this.overwritePet)
   }
 
   populateForm = (pet) => this.setState({form: pet, modal: true})
 
   render(){
-    console.log(this.state.form)
     return (
       <div className="index-page">
         <h3>!! All of Our Pets !!</h3>
-        <button onClick={this.toggleModal}>Toggle Modal</button>
+        <button onClick={this.openNewPetForm}>Add New Pet</button>
         <div className="simple-flex-row index-wrap">
-          {this.state.pets.map(pet => <PetCard key={pet.id} populateForm={this.populateForm} pet={pet} />)}
+          {this.state.pets.map(pet => <PetCard key={pet.id} populateForm={this.populateForm} delete={this.deletePet} pet={pet} />)}
         </div>
         <PetFormModal onChange={this.onChange} onSubmit={this.onSubmit} {...this.state.form} toggle={this.toggleModal} display={this.state.modal}/>
       </div>

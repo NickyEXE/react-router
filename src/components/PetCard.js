@@ -16,6 +16,7 @@ const PetCard = props => {
       </div>
       <button onClick={() => history.push(`pets/${id}`)}>Visit {name}!</button>
       <button onClick={() => props.populateForm(props.pet)}>Edit {name}!</button>
+      <button onClick={() => props.delete(id)}>Send {name} to Grandma's for the Weekend!</button>
     </div>
   )
 }

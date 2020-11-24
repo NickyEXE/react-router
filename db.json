@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Crookshanks",
-      "happiness": 7,
+      "happiness": "6",
       "description": "I hate Scabbers!",
       "image": "https://vignette.wikia.nocookie.net/harrypotter/images/f/ff/Crookshanks_FH.png/revision/latest?cb=20161118055031",
       "isAdopted": true
@@ -43,7 +43,7 @@
     {
       "id": 6,
       "name": "Jiji from Kiki’s Delivery Service",
-      "happiness": 0,
+      "happiness": "2",
       "description": "Meow",
       "image": "https://cdn.pastemagazine.com/www/articles/50-Kikis-Delivery-Service-Jiji-100-Best-Cats.jpg",
       "isAdopted": false
@@ -78,14 +78,6 @@
       "happiness": 0,
       "description": "We are si-a-mese if you ple-ease. We are si-a-mese if you don’t please…",
       "image": "https://cdn.pastemagazine.com/www/articles/20-Lady-and-the-Tramp-Si-and-Am-100-Best-Cats.jpg",
-      "isAdopted": false
-    },
-    {
-      "id": 11,
-      "name": "Goose from Captain Marvel",
-      "happiness": 0,
-      "description": "The tesseract actually tastes quite gross",
-      "image": "https://cdn.pastemagazine.com/www/articles/2019/12/11/Goose-captain-marvel.jpg",
       "isAdopted": false
     },
     {
