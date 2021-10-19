@@ -7,7 +7,6 @@ class Auth extends React.Component {
     password: '',
     confirmation: '',
     name: '',
-
   }
 
   toggleNewUser = () => this.setState(prevState => ({ isNewUser: !prevState.isNewUser, username: '', password: '', name: '', confirmation: '' }))
@@ -18,7 +17,7 @@ class Auth extends React.Component {
     const { isNewUser, password, confirmation, username } = this.state;
     isNewUser
       ? password === confirmation ? alert('created new account!') : alert('try again!')
-      : console.log("move me to the pets page!")
+      : this.props.routeStuff.history.push("/pets")
   }
 
   renderLogin = () => {
@@ -44,6 +43,7 @@ class Auth extends React.Component {
   }
 
   render(){
+    console.log(this.props)
     let { isNewUser } = this.state;
     return (
       <div className="simple-flex-col">

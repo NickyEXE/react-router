@@ -86,3 +86,7 @@ h1 {
 .highlight {
   color: red;
 }
+
+.active {
+  background-color: magenta;
+}

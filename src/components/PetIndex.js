@@ -1,5 +1,4 @@
 import React from 'react';
-import PetProfile from './PetProfile';
 import PetCard from './PetCard';
 
 const API = 'http://localhost:7001/cats'
@@ -15,6 +14,7 @@ class PetIndex extends React.Component {
 
 
   render(){
+    console.log(this.props)
     return (
       <div className="index-page">
         <h3>!! All of Our Pets !!</h3>

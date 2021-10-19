@@ -3,9 +3,9 @@ React Router
 
 ## SWBAT
 
-- [ ] Create a multi-page SPA
-- [ ] Explain the advantages of using React Router
-- [ ] Utilize the most common `react-router` components to build a SPA: `BrowserRouter`, `Route`, `Switch`, `Link`, and `NavLink`
+- [x] Create a multi-page SPA
+- [x] Explain the advantages of using React Router
+- [x] Utilize the most common `react-router` components to build a SPA: `BrowserRouter`, `Route`, `Switch`, `Link`, and `NavLink`
 - [ ] Use `push` and `history` to navigate pages
 - [ ] Create dynamic routes and use `params`
 - [ ] Make the distinction between `state` being one _Single Source of Truth_ and `react-router` being another _Single Source of Truth_
@@ -20,11 +20,11 @@ React Router
 - supa dupa fast... you only have to fetch your HTML once
 
 
-### Challenges 
+### Challenges
 - if the initial fetch is slow... your users gonna be maaaad and/or not your user anymore
-- everything lives on a single app so you've gotta plan to have everything on that first view 
+- everything lives on a single app so you've gotta plan to have everything on that first view
 - no way to navigate to specific pages
-- no way share 
+- no way share
 - no way bookmark
 
 
@@ -94,7 +94,3 @@ Combine that with `if/else` logic and tracking history and you get `react-router
 - [React Router Github](https://github.com/ReactTraining/react-router)
 - [React Router Website](https://reacttraining.com/react-router/)
 - [Anchors in React Router](https://medium.com/javascript-in-plain-english/creating-a-hash-anchor-link-effect-with-react-router-a63dcb1a9b0e)
-
-
-
-
